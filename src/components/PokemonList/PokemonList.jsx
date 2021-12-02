@@ -1,8 +1,9 @@
-import PropTypes from 'prop-types'
-import Pokemon from '../Pokemon/Pokemon'
-import './PokemonList.css'
+import PropTypes from "prop-types";
+import Pokemon from "../Pokemon/Pokemon";
+import "./PokemonList.css";
 
 export default function PokemonList({ pokemons }) {
+  console.log(pokemons);
   return (
     <ul aria-label="pokemonList" className="pokemonList">
       {pokemons.map((pokemon) => {
@@ -10,10 +11,10 @@ export default function PokemonList({ pokemons }) {
           <li className="listItem" key={pokemon.id}>
             <Pokemon pokemon={pokemon} />
           </li>
-        )
+        );
       })}
     </ul>
-  )
+  );
 }
 
 PokemonList.propTypes = {
@@ -29,4 +30,4 @@ PokemonList.propTypes = {
       generation: PropTypes.string.isRequired,
     })
   ).isRequired,
-}
+};
